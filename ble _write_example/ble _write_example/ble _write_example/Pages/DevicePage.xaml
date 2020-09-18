@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ble__write_example.Pages.DevicePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="btnScan" Text="Scan for Devices" Clicked="btnScan_Clicked"/>
+
+            <ListView 
+            x:Name="lvDevices"
+            
+            HorizontalOptions="FillAndExpand"
+            ItemTapped="lvDevices_ItemTapped"
+            ItemsSource="{Binding .}"
+            VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                        Detail="{Binding State}"
+                        Text="{Binding Name}"
+                        TextColor="White" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
